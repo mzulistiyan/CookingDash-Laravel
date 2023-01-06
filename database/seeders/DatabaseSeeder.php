@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Resep;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +17,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::create([
+            'name' => 'Alvina Sibuea',
+            'email' => 'alvin1@gmail.com',
+            'password' => bcrypt('12345')
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+       Resep::create([
+            'name' => 'Judul Pertama',
+            'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, expedita.",
+            'author' => 'Alvin',
+            'category_id' => 1,
+            'user_id' => 1
+        ]);
+
+       Resep::create([
+            'name' => 'Judul Kedua',
+            'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, expedita.",
+            'author' => 'Alvin',
+            'category_id' => 1,
+            'user_id' => 1
+        ]);
+
+       Resep::create([
+            'name' => 'Judul Ketiga',
+            'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, expedita.",
+            'author' => 'Alvin',
+            'category_id' => 1,
+            'user_id' => 1
+        ]);
     }
 }

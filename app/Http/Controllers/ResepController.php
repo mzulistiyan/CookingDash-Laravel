@@ -44,6 +44,6 @@ class ResepController extends Controller
 
         // $request->session()->flash('success', 'Registration successfull! Please login');
 
-        return redirect('/home')->with('success', 'Registration successfull! Please login');
+        // return redirect('/home')->with('success', 'Registration successfull! Please login');
     }
 }

@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-//use Illuminate\Database\Eloquent\Factories\HasFactory;
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Post 
-//extends Model
+extends Model
 {
-    //use HasFactory;
+    use HasFactory;
     private static $resep_post = [
         [
             "nama" => "Baso Cristoy",
@@ -40,4 +40,5 @@ class Post
         // }
         return $posts -> firstWhere('slug', $slug);
     }
+
 }

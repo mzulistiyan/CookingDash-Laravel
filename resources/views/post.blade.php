@@ -1,4 +1,4 @@
-@extends('layouts/main')
+<!-- @extends('layouts/main')
 
 @section('container')
     <article class="mb-5">
@@ -10,4 +10,4 @@
     </article>
 
     <a href="/recipes">Back To Catalog</a>
-@endsection
+@endsection -->

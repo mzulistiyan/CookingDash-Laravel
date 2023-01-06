@@ -17,6 +17,15 @@
           @enderror
         </div>
         <div class="form-floating">
+          <input type="text" name="author" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Author" required value="{{ old('author') }}">
+          <label for="deskripsi">Pemilik Resep</label>
+          @error('author')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
+        </div>
+        <div class="form-floating">
           <input type="text" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" placeholder="Username" required value="{{ old('deskripsi') }}">
           <label for="deskripsi">Deskripsi Resep</label>
           @error('deskripsi')
