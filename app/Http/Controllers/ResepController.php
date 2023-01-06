@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Resep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class ResepController extends Controller
 {
@@ -18,8 +20,8 @@ class ResepController extends Controller
 
     public function indexLabel()
     {
-        $data = DB::table('reseps')->get();
-        return view('resep.tampil', compact('data'), [
+        $reseps = DB::table('reseps')->get();
+        return view('resep.tampil', compact('reseps'), [
             'judulPage' => 'Register',
             'active' => 'register'
         ]);
@@ -32,8 +34,9 @@ class ResepController extends Controller
             'deskripsi' => ['required', 'min:3', 'max:255'],
         ]);
 
-        $data = [
+        $reseps = [
             'name' => $request->name,
+            'author' => $request->author,
             'deskripsi' => $request->deskripsi
         ];
 

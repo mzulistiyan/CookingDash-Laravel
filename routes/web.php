@@ -58,3 +58,13 @@ Route::get('/resep/index', [ResepController::class, 'index'])->name('resep');
 Route::post('/resep/create', [ResepController::class, 'store']);
 
 Route::get('/resep/tampil', [ResepController::class, 'indexLabel'])->name('resep.tampil');
+
+Route::get('/authors/{author:username}', function(User $reseps){
+    return view('resep', [
+        'judulPage' => "Post By Author : $author->name",
+        'tampil' => $author->resep
+    ]);
+});
+
+Route::get('/resep/{slug}', [SingleRecipeController::class, 'show']);
+  

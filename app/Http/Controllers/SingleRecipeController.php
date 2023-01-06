@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SingleRecipe;
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Http\Controllers\Controller;
 
-class PostController extends Controller
+class SingleRecipeController extends Controller
 {
     public function index(){
         return view('recipes', [
@@ -15,9 +16,8 @@ class PostController extends Controller
     }
 
     public function show($slug){
-        return view('post',[
-            "judulPage" => "Single Post",
-            "post" => Post::find($slug)
-        ]);
+        $resep = reseps::where('slug', $slug)->firstOrFail();
+        return view('singleRecipe', ['resep' => $resep]);
     }
+
 }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('author');
             $table->string('deskripsi');
             $table->timestamps();

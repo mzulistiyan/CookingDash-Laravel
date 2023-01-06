@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'Alvina Sibuea',
+            'username' => 'alvin',
             'email' => 'alvin1@gmail.com',
             'password' => bcrypt('12345')
         ]);
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
        Resep::create([
             'name' => 'Judul Pertama',
             'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, expedita.",
+            'slug' => 'judul-pertama',
             'author' => 'Alvin',
             'category_id' => 1,
             'user_id' => 1
@@ -34,6 +36,7 @@ class DatabaseSeeder extends Seeder
        Resep::create([
             'name' => 'Judul Kedua',
             'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, expedita.",
+            'slug' => 'judul-kedua',
             'author' => 'Alvin',
             'category_id' => 1,
             'user_id' => 1
@@ -42,6 +45,7 @@ class DatabaseSeeder extends Seeder
        Resep::create([
             'name' => 'Judul Ketiga',
             'deskripsi' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, expedita.",
+            'slug' => 'judul-ketiga',
             'author' => 'Alvin',
             'category_id' => 1,
             'user_id' => 1

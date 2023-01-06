@@ -6,9 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link {{ ($judulPage === "about") ? 'active' : '' }}" aria-current="page" href="/about">About</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link {{ ($judulPage === "resep") ? 'active' : '' }}" href="{{route('resep.tampil')}}">Recipes</a>
         </li>
