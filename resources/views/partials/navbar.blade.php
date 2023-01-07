@@ -10,7 +10,10 @@
           <a class="nav-link {{ ($judulPage === "about") ? 'active' : '' }}" aria-current="page" href="/about">About</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link {{ ($judulPage === "resep") ? 'active' : '' }}" href="{{route('resep.tampil')}}">Recipes</a>
+          <a class="nav-link {{ ($judulPage === "resep") ? 'active' : '' }}" href="{{route('resep.tampil')}}">Resep Makanan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ ($judulPage === "resep") ? 'active' : '' }}" href="{{route('bookmark.tampil')}}">Bookmark Makanan</a>
         </li>
         <!--
         <li class="nav-item">

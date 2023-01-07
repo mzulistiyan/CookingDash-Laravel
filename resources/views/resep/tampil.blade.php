@@ -1,28 +1,27 @@
 @extends('layouts/main')
 
-<!-- @section('container')
-
-    
-        <article class="mb-5">
-            
-            @foreach($reseps as $resep)
-            <h1>{{ $resep->name}}</h1>
-            <p>{{ $resep->deskripsi }}</p>
-            @endforeach
-        </article>
-    
-
-@endsection -->
 
 @section('container')
 
     @foreach ($reseps as $tampil)
         <article class="mb-5 border-bottom">
-        <h2>
-            <a href="/resep/{{ $tampil->slug }}" class="text-decoration-none">{{ $tampil->name }}</a>
-        </h2>
-            <h5>By: <a href="#">{{ $tampil->author }}</a> $tampil->author  }}</h5>
+       <div class="row"></div>
+            <h5>By: {{$tampil->author}}</h5>
             <p>{{ $tampil->deskripsi }}</p>
+            <h2>
+            <a href="{{ route('delete.resep',$tampil->id_resep) }}"type="button" class="btn btn-danger">Delete</a>
+            <a type="button" class="btn btn-info" href="{{ route('detail.resep',$tampil->id_resep) }}">Edit Resep</a>
+            
+            <form id="form" action="{{ route('bookmark.store', $tampil->id_resep) }}" method="POST" >
+                @csrf
+
+                <input type="hidden" name="getid" value="{{ $tampil->id_resep }}">
+                <input type="submit" name="submit" value="Bookmark">
+
+            </form>
+        </h2>
+       
+
         </article>
     @endforeach
 

@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ResepController;
+use App\Http\Controllers\BookmarkController;
+
+use App\Http\Controllers\SingleRecipeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 
@@ -59,12 +62,24 @@ Route::post('/resep/create', [ResepController::class, 'store']);
 
 Route::get('/resep/tampil', [ResepController::class, 'indexLabel'])->name('resep.tampil');
 
+
+Route::get('/bookmark/tampil', [BookmarkController::class, 'index'])->name('bookmark.tampil');
+Route::post('/bookmark/resep/{id}', [BookmarkController::class, 'store'])->name('bookmark.store');
+
+
 Route::get('/authors/{author:username}', function(User $reseps){
     return view('resep', [
         'judulPage' => "Post By Author : $author->name",
         'tampil' => $author->resep
     ]);
 });
+
+Route::get('/resep/detail/{id}', [SingleRecipeController::class, 'detailResep'])->name('detail.resep');
+
+Route::get('/resep/delete/{id}', [SingleRecipeController::class, 'deleteResep'])->name('delete.resep');
+
+Route::post('/resep/update/{id}', [SingleRecipeController::class, 'updateResep'])->name('update.resep');
+
 
 Route::get('/resep/{slug}', [SingleRecipeController::class, 'show']);
   

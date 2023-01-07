@@ -35,18 +35,15 @@ class ResepController extends Controller
         ]);
 
         $reseps = [
+            'user_id'=> auth()->user()->id,
             'name' => $request->name,
             'author' => $request->author,
             'deskripsi' => $request->deskripsi
         ];
 
-        Resep::create($data);
+        Resep::create($reseps);
 
-        // $validatedData['password'] = bcrypt($validatedData['password']);
-        // $validatedData['password'] = Hash::make($validatedData['password']);
+        return redirect('/resep/tampil');
 
-        // $request->session()->flash('success', 'Registration successfull! Please login');
-
-        // return redirect('/home')->with('success', 'Registration successfull! Please login');
     }
 }

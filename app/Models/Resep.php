@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Resep extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $guarded = ['id_resep'];
+    protected $primaryKey = 'id_resep';
+
 
     public function category(){
         return $this->belongsTo(Category::class);
