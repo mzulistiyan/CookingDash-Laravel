@@ -8,8 +8,10 @@
        <div class="row"></div>
        <h1>BOOKMARK RESEP</h1>
             <h5>By: {{$tampil->resep->author}}</h5>
-            <h5>By: {{$tampil->resep->deskripsi}}</h5>
+            <h5>{{$tampil->resep->deskripsi}}</h5>
             <h2>
+            <a href="{{ route('bookmark.delete',$tampil->id_bookmark) }}"type="button" class="btn btn-danger">Delete</a>
+
         </h2>
         </article>
     @endforeach

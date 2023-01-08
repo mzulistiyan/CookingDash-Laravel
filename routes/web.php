@@ -8,6 +8,7 @@ use App\Http\Controllers\ResepController;
 use App\Http\Controllers\BookmarkController;
 
 use App\Http\Controllers\SingleRecipeController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 
@@ -68,6 +69,11 @@ Route::post('/resep/update/{id}', [ResepController::class, 'updateResep'])->name
 
 Route::get('/bookmark/tampil', [BookmarkController::class, 'getDataBookmark'])->name('bookmark.tampil');
 Route::post('/bookmark/resep/{id}', [BookmarkController::class, 'store'])->name('bookmark.store');
+Route::get('/bookmark/delete/{id}', [BookmarkController::class, 'deleteBookmark'])->name('bookmark.delete');
+
+Route::post('/komentar/create', [KomentarController::class, 'createKomentar']);
+Route::get('/komentar/delete/{id}', [KomentarController::class, 'deleteKomentar'])->name('komentar.delete');
+
 
 
 Route::get('/authors/{author:username}', function(User $reseps){

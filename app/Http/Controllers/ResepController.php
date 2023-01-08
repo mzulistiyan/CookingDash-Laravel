@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Bookmark;
 
 class ResepController extends Controller
 {
@@ -20,10 +21,10 @@ class ResepController extends Controller
 
     public function getDataResep()
     {
-        $reseps = DB::table('reseps')->get();
+        $reseps = Resep::with(['komentar'])->get();
+        
         return view('resep.tampil', compact('reseps'), [
             'judulPage' => 'Register',
-            'active' => 'register'
         ]);
     }
 
@@ -51,7 +52,10 @@ class ResepController extends Controller
     public function deleteResep($id)
     {
         $data = Resep::find($id);
+        $bokmark = Bookmark::where('id_resep','=',$id)->first();
+        $bokmark->delete();
         $data->delete();
+        
         return redirect('/resep/tampil');
     }
 
