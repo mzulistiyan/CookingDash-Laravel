@@ -57,13 +57,16 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
+
+//Routing Resep
 Route::get('/resep/index', [ResepController::class, 'index'])->name('resep');
 Route::post('/resep/create', [ResepController::class, 'store']);
+Route::get('/resep/tampil', [ResepController::class, 'getDataResep'])->name('resep.tampil');
+Route::get('/resep/detail/{id}', [ResepController::class, 'detailResep'])->name('detail.resep');
+Route::get('/resep/delete/{id}', [ResepController::class, 'deleteResep'])->name('delete.resep');
+Route::post('/resep/update/{id}', [ResepController::class, 'updateResep'])->name('update.resep');
 
-Route::get('/resep/tampil', [ResepController::class, 'indexLabel'])->name('resep.tampil');
-
-
-Route::get('/bookmark/tampil', [BookmarkController::class, 'index'])->name('bookmark.tampil');
+Route::get('/bookmark/tampil', [BookmarkController::class, 'getDataBookmark'])->name('bookmark.tampil');
 Route::post('/bookmark/resep/{id}', [BookmarkController::class, 'store'])->name('bookmark.store');
 
 
@@ -74,11 +77,6 @@ Route::get('/authors/{author:username}', function(User $reseps){
     ]);
 });
 
-Route::get('/resep/detail/{id}', [SingleRecipeController::class, 'detailResep'])->name('detail.resep');
-
-Route::get('/resep/delete/{id}', [SingleRecipeController::class, 'deleteResep'])->name('delete.resep');
-
-Route::post('/resep/update/{id}', [SingleRecipeController::class, 'updateResep'])->name('update.resep');
 
 
 Route::get('/resep/{slug}', [SingleRecipeController::class, 'show']);

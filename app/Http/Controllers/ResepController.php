@@ -18,7 +18,7 @@ class ResepController extends Controller
         ]);
     }
 
-    public function indexLabel()
+    public function getDataResep()
     {
         $reseps = DB::table('reseps')->get();
         return view('resep.tampil', compact('reseps'), [
@@ -38,12 +38,40 @@ class ResepController extends Controller
             'user_id'=> auth()->user()->id,
             'name' => $request->name,
             'author' => $request->author,
-            'deskripsi' => $request->deskripsi
+            'deskripsi' => $request->deskripsi,
+            'tipe_makanan' => $request->tipe_makanan,
         ];
 
         Resep::create($reseps);
 
         return redirect('/resep/tampil');
 
+    }
+
+    public function deleteResep($id)
+    {
+        $data = Resep::find($id);
+        $data->delete();
+        return redirect('/resep/tampil');
+    }
+
+    public function detailResep($id)
+    {
+        $data = Resep::find($id);
+       
+        return view('resep.edit', compact('data'),["judulPage" => "resep"]);
+    }
+
+    public function updateResep(Request $request,$id)
+    {
+        $resep = Resep::find($id); 
+        $resep->name = $request->name; 
+        $resep->author = $request->author; 
+        $resep->deskripsi = $request->deskripsi;
+        $resep->tipe_makanan = $request->tipe_makanan; 
+
+
+        $resep->save(); 
+        return redirect('/resep/tampil');
     }
 }

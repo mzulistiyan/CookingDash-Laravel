@@ -25,6 +25,15 @@
             </div>
           @enderror
         </div>
+        <div class="form-floating">
+          <input type="text" name="tipe_makanan" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Author"   value="{{$data->tipe_makanan}}">
+          <label for="deskripsi">Tipe Makanan Resep</label>
+          @error('author')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
+        </div>
         <div class="">
           <textarea type="text" name="deskripsi" class="" rows="10" cols="59" id="deskripsi" placeholder="Username" >{{$data->deskripsi}}</textarea>
           <label for="deskripsi">Deskripsi Resep</label>
@@ -34,6 +43,7 @@
             </div>
           @enderror
         </div>
+        
         
     
         <button class="w-100 btn btn-lg btn-dark mt-3" type="submit">Selesai</button>

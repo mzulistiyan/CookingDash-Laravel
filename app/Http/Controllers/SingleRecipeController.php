@@ -20,30 +20,7 @@ class SingleRecipeController extends Controller
         return view('singleRecipe', ['resep' => $resep]);
     }
 
-    public function deleteResep($id)
-    {
-        $data = Resep::find($id);
-        $data->delete();
-        return redirect('/resep/tampil');
-    }
-
-    public function detailResep($id)
-    {
-        $data = Resep::find($id);
-       
-        return view('resep.edit', compact('data'),["judulPage" => "resep"]);
-    }
-
-    public function updateResep(Request $request,$id)
-    {
-        $resep = Resep::find($id); 
-        $resep->name = $request->name; 
-        $resep->author = $request->author; 
-        $resep->deskripsi = $request->deskripsi; 
-
-        $resep->save(); 
-        return redirect('/resep/tampil');
-    }
+    
     
 
 }

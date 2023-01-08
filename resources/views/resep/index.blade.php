@@ -34,25 +34,15 @@
             </div>
           @enderror
         </div>
-        <!-- <div class="form-floating">
-          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
-          <label for="email">Email address</label>
-          @error('email')
+        <div class="form-floating">
+          <input type="text" name="tipe_makanan" class="form-control @error('deskripsi') is-invalid @enderror" id="tipe_makanan" placeholder="Username" required value="{{ old('tipe_makanan') }}">
+          <label for="deskripsi">Tipe Menu Resep</label>
+          @error('deskripsi')
             <div class="invalid-feedback">
               {{ $message }}
             </div>
           @enderror
         </div>
-        <div class="form-floating">
-          <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
-          <label for="password">Password</label>
-          @error('password')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
-        </div> -->
-    
         <button class="w-100 btn btn-lg btn-dark mt-3" type="submit">Selesai</button>
       </form>
       <!-- <small class="d-block text-center mt-3">Already registered? <a href="/login">Login</a></small> -->

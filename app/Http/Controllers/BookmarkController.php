@@ -7,16 +7,18 @@ use Illuminate\Http\Request;
 
 class BookmarkController extends Controller
 {
-    public function index()
+    public function getDataBookmark()
     {
-        $reseps = Bookmark::with(['resep','users'])->where('id_user', '=', auth()->user()->id)->get();
+        $reseps = Bookmark::with(['resep','users'])
+        ->where('id_user', '=', auth()->user()->id)
+        ->get();
         
         return view('bookmark.tampil', compact('reseps'),["judulPage" => "resep"]);
     }
 
     public function store(Request $request,$id)
     {
-
+        
         $bookmark = [
             'id_user'=> auth()->user()->id,
             'id_resep' => $id,
