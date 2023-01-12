@@ -14,8 +14,8 @@ class Resep extends Model
     protected $primaryKey = 'id_resep';
 
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function bookmark(){
+        return $this->hasMany(Bookmark::class,'id_resep');
     }
 
     public function user(){

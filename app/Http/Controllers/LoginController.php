@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/home');
+            return redirect()->intended('/resep/tampil');
         }
 
         return back()->with('loginError', 'Login failed!');

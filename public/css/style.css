@@ -1,3 +1,654 @@
-body {
-    background-color: aqua;
+:root{
+    --pr-color : #34393A;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background: #FFFFFF;
+}
+
+.checked {
+    color: orange;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Navbar Style*/
+
+.navbar-brand, .navbar-brand:hover{
+    color: #FFFFFF;
+    font-family: 'Noto Serif KR';
+    font-weight: 900;
+    font-size: 64px;
+    letter-spacing: -0.24px;
+}
+
+.navbar .form-control{
+    width: 365px;
+    height: 46px;
+    padding: 13px;
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.74px;
+    border-radius: 7px 0 0 7px;
+    border: none;
+    color: #34393A;
+}
+
+.navbar .button_search{
+    height: 46px;
+    width: 46px;
+    border-radius: 0 7px 7px 0;
+    border: none;
+    background: #FFFFFF;
+}
+
+.navbar .button_navbar{
+    margin-top: 7px;
+    margin-left: 25px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Index Bag 1 */
+
+#index1{
+    padding: 50px 0 100px 0;
+}
+
+#index1 .bag1 a{
+    text-decoration: none;
+}
+
+#index1 .bag1 .awal{
+    position: relative;
+}
+
+#index1 .bag1 img{
+    width: 100%;
+    height: 380px;
+    border-radius: 7px;
+}
+
+#index1 .bag1 p{
+    width: max-content;
+    padding: 7px;
+    background-color: #FFFFFF;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: -0.74px;
+    color: #34393A;
+    border-radius: 0px 7px 0px 7px;
+    position: absolute;
+    bottom: -16px;
+    left: 12px;
+}
+
+/* Index Bag 2 */
+
+#index2{
+    background-color: #C6C6C6;
+    padding: 100px 0 100px 0;
+}
+
+#index2 h1{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 25px;
+}
+
+#index2 .best{
+    border-radius: 7px;
+    height: 215px;
+    background: #34393A;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#index2 .img img{
+    width: 300px;
+    height: 215px;
+    border-radius: 7px 0 0 7px;
+}
+
+#index2 .h2 h2{
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 120px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#index2 .info h3{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+#index2 .info .rating{
+    margin-left: 20px;
+}
+
+#index2 .checked {
+    color: orange;
+}
+
+#index2 span{
+    color: #626262;
+}
+
+/* Index Bag 3 */
+
+#index3{
+    padding: 100px 0 100px 0;
+}
+
+#index3 h1{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -0.24px;
+    color: #E5E5E5;
+    margin-bottom: 25px;
+}
+
+#index3 .card{
+    padding: 17px 17px 7px 17px;
+    background: #C6C6C6;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#index3 .card img{
+    height: 277px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+#index3 .card h2{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 0px;
+}
+
+#index3 .checked {
+    color: orange;
+}
+
+#index3 span{
+    color: #626262;
+}
+
+/* Search */
+
+#search{
+    padding: 50px 0 100px 0;
+}
+
+#search h1{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -0.24px;
+    color: #E5E5E5;
+    margin-bottom: 25px;
+}
+
+#search .card{
+    padding: 17px 17px 7px 17px;
+    background: #C6C6C6;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#search .card img{
+    height: 277px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+#search .card h2{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 0px;
+}
+
+#search .checked {
+    color: orange;
+}
+
+#search span{
+    color: #626262;
+}
+
+/* Favorite */
+
+#favorite{
+    padding: 50px 0 100px 0;
+}
+
+#favorite h1{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -0.24px;
+    color: #E5E5E5;
+    margin-bottom: 25px;
+}
+
+#favorite .card{
+    padding: 17px 17px 7px 17px;
+    background: #C6C6C6;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#favorite .card img{
+    height: 277px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+#favorite .card h2{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 0px;
+}
+
+#favorite .checked {
+    color: orange;
+}
+
+#favorite span{
+    color: #626262;
+}
+
+/* Resep*/
+
+#resep, #add{
+    padding: 100px;
+}
+
+#resep h1{
+    font-family: 'Noto Serif KR';
+    font-weight: 900;
+    font-size: 86px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+}
+
+#resep .card-resep{
+    width: 100%;
+    background: #C6C6C6;
+    border-radius: 7px;
+    padding: 100px;
+    margin-bottom: 130px;
+}
+
+#resep .card-resep img{
+    width: 100%;
+    max-height: 980px;
+    border-radius: 7px;
+}
+
+#resep .card-resep h2{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-top: 55px;
+    margin-bottom: 10px;
+}
+
+#resep .card-resep ul, #resep .card-resep ol{
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+}
+
+#resep .card-komentar{
+    width: 100%;
+    background: #C6C6C6;
+    border-radius: 7px;
+    padding: 100px;
+}
+
+#resep .card-isikomentar{
+    width: 100%;
+    height: 262px;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 7px;
+    margin-bottom: 50px;
+}
+
+#resep .card-isikomentar h3{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 10px;
+}
+
+#resep .card-isikomentar p{
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-top: 10px;
+}
+
+#resep .tambahkomen h2{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 10px;
+}
+
+#resep .tambahkomen p{
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 50px;
+}
+
+#resep .tambahkomen .form-control{
+    width: 100%;
+    height: 230px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 7px;
+    border: none;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 25px;
+}
+
+#resep .tambahkomen .data .form-control, .card-rating{
+    width: 100%;
+    height: 71px;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    border: none;
+    padding: 20px;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+}
+
+#resep .tambahkomen .button-komentar{
+    height: 71px;
+    width: 100%;
+    background: #34393A;
+    border-radius: 7px;
+    border: none;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    border: none;
+}
+
+/* Add */
+
+#add .judul{
+    height: 130px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    font-family: 'Noto Serif KR';
+    font-weight: 900;
+    font-size: 86px;
+    text-align: center;
+    letter-spacing: -0.24px;
+    color: #3F3E3E;
+    margin-bottom: 80px;
+}
+
+#add .card-add{
+    width: 100%;
+    background: #C6C6C6;
+    border-radius: 7px;
+    padding: 100px;
+}
+
+#add .card-add .button_inputImg{
+    width: 100%;
+    height: 980px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    padding: 384px 0 0 0;
+    border: none;
+}
+
+#add .card-add .button_inputImg p{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-top: 28px;
+}
+
+#add .card-add h2{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 15px;
+}
+
+#add .card-add .form-control{
+    width: 100%;
+    height: 462px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    padding: 30px;
+    margin-bottom: 50px;
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+}
+
+#add .card-add .button_submit{
+    width: 380px;
+    height: 71px;
+    background: #34393A;
+    border-radius: 7px;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    border: none;
+}
+
+#add .card-add a, .card-add a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* Login and Register */
+
+#login{
+    padding-top: 90px;
+}
+
+#register{
+    padding-top: 15px;
+}
+
+#login h1, #register h1{
+    font-family: 'Noto Serif KR';
+    font-weight: 900;
+    font-size: 64px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
+#login p, #register p{
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF; 
+    margin-bottom: 20px;   
+}
+
+#login a, #login a:hover, #register a, #register a:hover{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A; 
+    text-decoration: none;
+}
+
+#login .regis, #login .regis:hover{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+#login .form-control, #register .form-control, #register .form-select{
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 10px;
+}
+
+#login .button-login, #register .button-register{
+    height: 60px;
+    background: #C6C6C6;
+    border-radius: 7px;
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 20px;
+    border: none;
+}
+
+/* Account and Edit*/
+
+#account{
+    padding: 15px;
+}
+
+#editAccount{
+    padding: 50px;
+}
+
+#account h1, #editAccount h1{
+    font-family: 'Noto Serif KR';
+    font-weight: 900;
+    font-size: 64px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
+#account p, #editAccount p{
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF; 
+    margin-bottom: 10px;   
+}
+
+#account .data, #editAccount .data{
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    padding: 12px;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+    margin-bottom: 10px;
+}
+
+#account a, #editAccount a{
+    text-decoration: none;
+    color: #34393A;
+}
+
+#account .button-account, #editAccount button{
+    padding: 12px;
+    border-radius: 7px;
+    height: 60px;
+    background: #C6C6C6;
+    margin-bottom: 10px;
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
+}
+
+#account .button-account p{
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.24px;
+    color: #34393A;
 }

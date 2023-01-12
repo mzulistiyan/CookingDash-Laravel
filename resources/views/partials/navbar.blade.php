@@ -15,6 +15,12 @@
         <li class="nav-item">
           <a class="nav-link {{ ($judulPage === "resep") ? 'active' : '' }}" href="{{route('bookmark.tampil')}}">Bookmark Makanan</a>
         </li>
+        <li class="nav-item">
+        <a href="{{ route('logout') }}"  class="nav-link">
+    Logout
+</a>
+      </form>
+        </li>
         <!--
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>

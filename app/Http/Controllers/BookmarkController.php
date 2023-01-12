@@ -19,7 +19,7 @@ class BookmarkController extends Controller
     public function store(Request $request,$id)
     {
         
-        if (Bookmark::where('id_resep','=',$id)->exists()) {
+        if (Bookmark::where('id_user','=',auth()->user()->id)->where('id_resep','=',$id)->exists()) {
             session()->flash('warning', 'Already in system.');
             return redirect()->back();
         } else{

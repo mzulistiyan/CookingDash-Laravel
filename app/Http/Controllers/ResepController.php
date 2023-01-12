@@ -21,8 +21,7 @@ class ResepController extends Controller
 
     public function getDataResep()
     {
-        $reseps = Resep::with(['komentar'])->get();
-        
+        $reseps = Resep::with(['komentar','komentar.users','bookmark'])->get();
         return view('resep.tampil', compact('reseps'), [
             'judulPage' => 'Register',
         ]);
@@ -53,7 +52,11 @@ class ResepController extends Controller
     {
         $data = Resep::find($id);
         $bokmark = Bookmark::where('id_resep','=',$id)->first();
-        $bokmark->delete();
+        if (Bookmark::where('id_resep','=',$id)->exists()) {
+            $bokmark->delete();         
+        }
+       
+        
         $data->delete();
         
         return redirect('/resep/tampil');

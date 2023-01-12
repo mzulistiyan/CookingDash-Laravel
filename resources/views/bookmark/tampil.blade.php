@@ -2,18 +2,19 @@
 
 
 @section('container')
+@foreach ($reseps as $tampil)
 
-    @foreach ($reseps as $tampil)
-        <article class="mb-5 border-bottom">
-       <div class="row"></div>
-       <h1>BOOKMARK RESEP</h1>
-            <h5>By: {{$tampil->resep->author}}</h5>
-            <h5>{{$tampil->resep->deskripsi}}</h5>
-            <h2>
-            <a href="{{ route('bookmark.delete',$tampil->id_bookmark) }}"type="button" class="btn btn-danger">Delete</a>
+<div class="card mb-3">
+    <div class="card-header">
+        By: {{$tampil->resep->author}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{$tampil->resep->name}}</h5>
+        <p class="card-text">{{$tampil->resep->deskripsi}}</p>
+        <a href="{{ route('bookmark.delete',$tampil->id_bookmark) }}" class="btn btn-danger">Delete Bookmark</a>
+    </div>
+</div>
 
-        </h2>
-        </article>
-    @endforeach
+@endforeach
 
 @endsection

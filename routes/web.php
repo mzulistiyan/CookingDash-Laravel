@@ -51,7 +51,6 @@ Route::get('recipes/{slug}', [PostController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
@@ -75,6 +74,13 @@ Route::post('/komentar/create', [KomentarController::class, 'createKomentar']);
 Route::get('/komentar/delete/{id}', [KomentarController::class, 'deleteKomentar'])->name('komentar.delete');
 
 
+Route::get('logout', function ()
+{
+    auth()->logout();
+    Session()->flush();
+
+    return Redirect::to('/');
+})->name('logout');
 
 Route::get('/authors/{author:username}', function(User $reseps){
     return view('resep', [
