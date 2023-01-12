@@ -1,10 +1,6 @@
 @extends('layouts/main')
-
-
 @section('container')
-
 <div class="container" style="display: inline-flex; column-gap: 20px; justify-content: space-between;">
-
     <div class=" row-cols-1 g-4">
         <div class="col">
             <div class="col">
@@ -12,24 +8,19 @@
                     data-target="#myModal">Tambah
                     Resep Baru</button>
                 @foreach ($reseps as $tampil)
-
                 <div class="card mb-3">
                     <div class="card-header">
                         By: {{ $tampil->author }}
-
                     </div>
                     <div class="card-body">
                         <h2 class="card-title">{{ $tampil->name }}</h2>
                         <p class="card-text">{{ $tampil->deskripsi }}</p>
                         <div class="d-flex flex-row align-items-center">
-
                             <form id="form" action="{{ route('bookmark.store', $tampil->id_resep) }}" method="POST"
                                 style="padding-right:5px">
                                 @csrf
-
                                 <input type="hidden" name="getid" value="{{ $tampil->id_resep }}">
                                 <input type="submit" class="small text-primary mb-0" name="submit" value="Bookmark">
-
                             </form>
                             <a class="small text-secondary mb-0" href="{{ route('detail.resep',$tampil->id_resep) }}"
                                 style="padding-right:5px">Edit Resep</a>
@@ -45,19 +36,15 @@
                                         <div class="row">
                                             <form action="/komentar/create" method="POST">
                                                 @csrf
-
                                                 <input type="text" id="addANote" class="form-control" name="komentar"
                                                     placeholder="Type comment..." />
                                                 <button type="submit" class="btn btn-success mt-3 ">Tambah
                                                     Komentar</button>
                                                 <input name="id_resep" type="hidden" value="{{$tampil->id_resep}}" disp>
-
-
                                             </form>
                                         </div>
                                     </div>
                                     @foreach ($tampil->komentar as $tampilKomentar)
-
                                     <div class="card mb-4">
                                         <div class="card-body">
                                             <p>{{ $tampilKomentar->komentar }}</p>
@@ -71,28 +58,17 @@
                                                 <div class="d-flex flex-row align-items-center">
                                                     <a class="small mb-0 text-danger"
                                                         href="{{ route('komentar.delete',$tampilKomentar->id_komentar) }}">Delete</a>
-
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
-
                                     @endforeach
-
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
 
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
